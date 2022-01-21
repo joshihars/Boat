@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Admin page</h1>
+    <form id="form">
+        <input id="name" type="text" placeholder="enter name of product"/>
+        <input id="price" type="number" placeholder="Enter price">
+        <select id="select">
+            <option value="Rating- ★">1</option>
+            <option value="Rating- ★★">2</option>
+            <option value="Rating- ★★★">3</option>
+            <option value="Rating- ★★★★">4</option>
+            <option value="Rating- ★★★★★">5</option>
+        </select>
+        <input id="img" type="text" placeholder="Enter image url">
+        <input id="para" type="text">
+        <input type="submit">
+    </form>
+
+    <button> Go to shop</button>
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit",addItem);
+
+    var prod = JSON.parse(localStorage.getItem("Bag")) || [];
+
+    function addItem(e){
+        e.preventDefault();
+        console.log("here");
+        console.log(form);
+
+        //you can select form values based on element ID
+        //console.log(form.name.value);
+        //console.log(form.price.value);
+        //console.log(form.select.value);
+        //applicable only in form
+
+        var productObj={
+            name:form.name.value,
+            price:form.price.value,
+            type:form.select.value,
+            image_url:form.img.value,
+            pr:form.para.value,
+        };
+        console.log(productObj);
+        prod.push(productObj);
+        localStorage.setItem("Bag",JSON.stringify(prod));
+
+    }
+
+    document.querySelector("button").addEventListener("click",function(){
+        window.location.href ="bestsellers.html";
+    });
+</script>
