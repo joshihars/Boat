@@ -9,3 +9,7 @@ boAt is a lifestyle brand that deals with fashionable consumer electronics inclu
 
 ![Product Page](https://user-images.githubusercontent.com/93377385/160081476-a330ef21-5127-471c-80d5-cc0cd32d699d.png)
 
+3. Cart Page
+
+![cart page](https://user-images.githubusercontent.com/93377385/160081673-4c448f4c-d097-4963-adff-d2c627000e51.png)
+
